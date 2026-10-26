@@ -30,7 +30,7 @@ const Add = () => {
 
         const token = localStorage.getItem("jwt")
 
-        axios.post("http://localhost:8000/tasks/create", task, { headers: { Authorization: `Bearer ${token}` } })
+        axios.post("https://task-backend-opal-eta.vercel.app/tasks/create", task, { headers: { Authorization: `Bearer ${token}` } })
             .then((res) => {
                 const { status, data } = res
                 if (status === 201) {

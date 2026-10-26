@@ -22,7 +22,7 @@ const EditTask = () => {
 
         const token = localStorage.getItem("jwt")
 
-        axios.get(`http://localhost:8000/tasks/single/${id}`, { headers: { Authorization: `Bearer ${token}` } })
+        axios.get(`https://task-backend-opal-eta.vercel.app/tasks/single/${id}`, { headers: { Authorization: `Bearer ${token}` } })
             .then((res) => {
                 const { status, data } = res
                 if (status === 200) {
@@ -48,7 +48,7 @@ const EditTask = () => {
 
         setIsProcessing(true)
         const token = localStorage.getItem("jwt")
-        axios.patch("http://localhost:8000/tasks/update", task, { headers: { Authorization: `Bearer ${token}` } })
+        axios.patch("https://task-backend-opal-eta.vercel.app/tasks/update", task, { headers: { Authorization: `Bearer ${token}` } })
             .then((res) => {
                 const { status, data } = res
                 if (status === 200) {

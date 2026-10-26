@@ -21,7 +21,7 @@ const AuthContext = ({ children }) => {
             return
         }
 
-        axios.get("http://localhost:8000/auth/user", { headers: { Authorization: `Bearer ${jwt}` } })
+        axios.get("https://task-backend-opal-eta.vercel.app/auth/user", { headers: { Authorization: `Bearer ${jwt}` } })
             .then((res) => {
                 const { status, data } = res
                 if (status === 200) {

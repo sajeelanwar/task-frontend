@@ -18,7 +18,7 @@ const AllTask = () => {
         setIsProcessing(true)
         const token = localStorage.getItem("jwt")
 
-        axios.get("http://localhost:8000/tasks/all", { headers: { Authorization: `Bearer ${token}` } })
+        axios.get("https://task-backend-opal-eta.vercel.app/tasks/all", { headers: { Authorization: `Bearer ${token}` } })
             .then((res) => {
                 const { status, data } = res
                 if (status === 200) {
@@ -39,7 +39,7 @@ const AllTask = () => {
 
         const token = localStorage.getItem("jwt")
 
-        axios.delete(`http://localhost:8000/tasks/delete/${taskObj.id}`, { headers: { Authorization: `Bearer ${token}` } })
+        axios.delete(`https://task-backend-opal-eta.vercel.app/tasks/delete/${taskObj.id}`, { headers: { Authorization: `Bearer ${token}` } })
             .then((res) => {
                 const { status, data } = res
                 if (status === 200) {

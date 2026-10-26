@@ -29,7 +29,7 @@ const Register = () => {
 
         setIsProcessing(true)
 
-        axios.post("http://localhost:8000/auth/register", user)
+        axios.post("https://task-backend-opal-eta.vercel.app/auth/register", user)
             .then((res) => {
                 const { status, data } = res
                 if (status === 201) {
